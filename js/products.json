@@ -1,0 +1,146 @@
+[
+    {
+        "id": 1,
+        "name": "Chocolate Glazed Donut",
+        "price": 2.50,
+        "image": "../assets/img/donuts/Midnight-Madness.png",
+        "description": "A classic donut with a rich chocolate glaze.",
+        "category": "donuts"
+    },
+    {
+        "id": 2,
+        "name": "Strawberry Frosted Donut",
+        "price": 2.75,
+        "image": "../assets/img/donuts/Strawberry-Shortcake.png",
+        "description": "A fluffy donut topped with strawberry frosting and sprinkles.",
+        "category": "donuts"
+    },
+    {
+        "id": 3,
+        "name": "Maple Bacon Donut",
+        "price": 3.00,
+        "image": "../assets/img/donuts/beach-ball-carnival-sprinkles.png",
+        "description": "A savory-sweet donut topped with maple glaze and crispy bacon.",
+        "category": "donuts"
+    },
+    {
+        "id": 4,
+        "name": "Vanilla Cream Filled Donut",
+        "price": 2.80,
+        "image": "../assets/img/donuts/chocolate-covered-strawberry.png",
+        "description": "A soft donut filled with rich vanilla cream and dusted with powdered sugar.",
+        "category": "donuts"
+    },
+    {
+        "id": 5,
+        "name": "Lemon Zest Donut",
+        "price": 2.60,
+        "image": "../assets/img/donuts/Chocolate-Explosion.png",
+        "description": "A zesty lemon-flavored donut with a light glaze.",
+        "category": "donuts"
+    },
+    {
+        "id": 6,
+        "name": "Strawberry Frosted Donut",
+        "price": 2.75,
+        "image": "../assets/img/donuts/Strawberry-Shortcake.png",
+        "description": "A fluffy donut topped with strawberry frosting and sprinkles.",
+        "category": "donuts"
+    },
+    {
+        "id": 7,
+        "name": "Maple Bacon Donut",
+        "price": 3.00,
+        "image": "../assets/img/donuts/beach-ball-carnival-sprinkles.png",
+        "description": "A savory-sweet donut topped with maple glaze and crispy bacon.",
+        "category": "Sandwiches"
+    },
+    {
+        "id": 8,
+        "name": "Peanut Butter Paradise",
+        "price": 2.80,
+        "image": "../assets/img/donuts/chocolate-covered-strawberry.png",
+        "description": "A soft donut filled with rich vanilla cream and dusted with powdered sugar.",
+        "category": "Sandwiches"
+    },
+    {
+        "id": 9,
+        "name": "Vanilla Cream Filled Donut",
+        "price": 2.80,
+        "image": "../assets/img/donuts/chocolate-covered-strawberry.png",
+        "description": "A soft donut filled with rich vanilla cream and dusted with powdered sugar.",
+        "category": "Sandwiches"
+    },
+    {
+        "id": 10,
+        "name": "Vanilla Cream Filled Donut",
+        "price": 2.80,
+        "image": "../assets/img/donuts/chocolate-covered-strawberry.png",
+        "description": "A soft donut filled with rich vanilla cream and dusted with powdered sugar.",
+        "category": "Sandwiches"
+    },
+    {
+        "id": 11,
+        "name": "Americano",
+        "price": 2.60,
+        "image": "../assets/img/coffee/Americano.png",
+        "description": "A zesty lemon-flavored donut with a light glaze.",
+        "category": "Coffee"
+    },
+    {
+        "id": 12,
+        "name": "Chocolate Explosion Donut",
+        "price": 3.20,
+        "image": "../assets/img/coffee/Cappuccino.png",
+        "description": "Freshly brewed espresso shots combined with water, available hot or iced.",
+        "category": "Coffee"
+    },
+    {
+        "id": 13,
+        "name": "Beach Ball Carnival Sprinkles Donut",
+        "price": 2.90,
+        "image": "../assets/img/coffee/Coffee-Frappe.png",
+        "description": "A fun donut with colorful carnival sprinkles and a light glaze.",
+        "category": "Coffee"
+    },
+    {
+        "id": 14,
+        "name": "Midnight Madness Donut",
+        "price": 3.50,
+        "image": "../assets/img/coffee/Cold-Brew.png",
+        "description": "A dark chocolate donut with a midnight blue glaze and edible glitter.",
+        "category": "Coffee"
+    },
+    {
+        "id": 15,
+        "name": "Chocolate Covered Strawberry Donut",
+        "price": 3.00,
+        "image": "../assets/img/coffee/Cookie-Crumble-Frappe.png",
+        "description": "A delightful donut topped with chocolate glaze and fresh strawberry slices.",
+        "category": "Coffee"
+    },
+    {
+        "id": 16,
+        "name": "Iced Latte",
+        "price": 3.50,
+        "image": "../assets/img/ice-blended/detail-Blueberry-Milkshake.png",
+        "description": "A sweet caramel macchiato with layers of espresso and steamed milk.",
+        "category": "Ice Blended"
+    },
+    {
+        "id": 17,
+        "name": "Caramel Macchiato",
+        "price": 4.00,
+        "image": "../assets/img/ice-blended/detail-Strawberry-Milkshake.png",
+        "description": "A sweet caramel macchiato with layers of espresso and steamed milk.",
+        "category": "Ice Blended"
+    },
+    {
+        "id": 18,
+        "name": "Mocha Frappuccino",
+        "price": 4.50,
+        "image": "../assets/img/ice-blended/detail-Blueberry-Milkshake.png",
+        "description": "A blended mocha frappuccino topped with whipped cream.",
+        "category": "Ice Blended"
+    }
+]

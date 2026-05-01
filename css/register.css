@@ -1,0 +1,182 @@
+body {
+    background: url('../images/backg2.png') center/cover no-repeat fixed;
+    min-height: 100vh;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.form-control,
+.form-check-input {
+    background-color: transparent;
+    color: #fff;
+    border-color: #ccc;
+}
+
+.form-floating>label {
+    color: #ccc;
+}
+
+a {
+    color: #f0f0f0;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.03);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.input-error {
+    color: #ff6b6b;
+    font-size: 0.875rem;
+    margin-top: 4px;
+}
+
+.success-message {
+    color: #4bb543;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+
+@media (max-width: 576px) {
+    .glass-card {
+        padding: 20px;
+    }
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+@media (max-width: 992px) {
+    .glass-card {
+        max-width: 380px;
+        padding: 25px;
+    }
+
+    .glass-card form h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-control,
+    .form-check-input {
+        font-size: 0.95rem;
+    }
+
+    button {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .glass-card {
+        max-width: 360px;
+        padding: 20px;
+        margin: 0 15px;
+    }
+
+    .glass-card form h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-floating.mb-2 {
+        margin-bottom: 1rem !important;
+    }
+
+    .form-control {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .input-error {
+        font-size: 0.8rem;
+    }
+
+    .success-message {
+        margin-top: 10px;
+        font-size: 0.9rem;
+    }
+
+    a {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .glass-card {
+        max-width: 100%;
+        padding: 15px;
+        margin: 0 10px;
+        border-radius: 10px;
+    }
+
+    .glass-card form h2 {
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .form-floating {
+        margin-bottom: 0.8rem !important;
+    }
+
+    .form-floating>label {
+        font-size: 0.85rem;
+    }
+
+    .form-control {
+        padding: 0.6rem;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+
+    .form-check-input {
+        width: 18px;
+        height: 18px;
+    }
+
+    .form-check-label {
+        font-size: 0.85rem;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.6rem;
+        font-size: 0.85rem;
+        border-radius: 8px;
+    }
+
+    .input-error {
+        font-size: 0.75rem;
+        margin-top: 2px;
+    }
+
+    .success-message {
+        font-size: 0.85rem;
+        margin-top: 8px;
+    }
+
+    a {
+        font-size: 0.85rem;
+    }
+}

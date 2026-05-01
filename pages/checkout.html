@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Holy Donuts</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fff5f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 500px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #ff4da6;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: #555;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    input {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .btn {
+      background-color: #ff4da6;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s;
+      margin-bottom: 10px;
+    }
+    .btn:hover {
+      background: #e0458f;
+    }
+    .btn-secondary {
+      background-color: #6c757d;
+      color: white;
+    }
+    .btn-secondary:hover {
+      background-color: #5a6268;
+    }
+    .button-group {
+      display: flex;
+      gap: 10px;
+    }
+    .button-group .btn {
+      flex: 1;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Checkout</h1>
+    <p>Please enter your information to proceed to payment.</p>
+    <form id="checkoutForm">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="address" placeholder="Street Address" required>
+      <input type="text" name="city" placeholder="City" required>
+      <input type="text" name="zip" placeholder="ZIP Code" required>
+      <input type="text" name="phone" placeholder="Phone Number" required>
+      <div class="button-group">
+        <button type="button" class="btn btn-secondary" onclick="cancelCheckout()">Cancel</button>
+        <button type="submit" class="btn">Proceed to Payment</button>
+      </div>
+    </form>
+  </main>
+  <script>
+    document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      window.location.href = "https://buy.stripe.com/test_cNi4gAckb4eV6L29Mt5Vu01";
+    });
+
+    // Function to cancel checkout and return to cart
+    function cancelCheckout() {
+      window.location.href = "./cart.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+:root {
+    --primary-pink: #ff69b4;
+    --secondary-pink: #ff91c7;
+    --light-pink: #ffe4f0;
+    --dark-gray: #333;
+    --light-gray: #f8f9fa;
+}
+
+body {
+    font-family: 'Teko', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+/* ======================= start header ===================*/
+.navbar {
+    background-color: white !important;
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 900 !important;
+    font-size: 1.5rem;
+    color: var(--primary-pink) !important;
+}
+
+/* logo */
+
+.nav__logo {
+    width: 42px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    position: relative;
+}
+
+.nav__logo::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+}
+/* end logo */
+
+
+.nav-link {
+    color: var(--dark-gray) !important;
+    font-weight: 100;
+    margin: 0 10px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-pink) !important;
+}
+
+
+
+.search-box input {
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 8px 40px 8px 15px;
+    width: 250px;
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000000;
+    background-color: white;
+    border-left: 21px solid rgba(0, 0, 0, 0.297);
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 19px;
+}
+
+.cart-icon {
+    position: relative;
+    color: var(--primary-pink);
+    font-size: 1.5rem;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary-pink);
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#authButtons {
+    display: flex;
+    margin-left: 20px;
+    gap: 10px;
+
+
+}
+.btnone .btntwo {
+    padding: 10px 16px !important;
+    border-radius: 30px !important;
+
+}
+.btnone {
+    border: none;
+     color: var(--primary-pink) !important;
+
+}
+.hidden {
+    display: none !important;
+}
+.btn-primary {
+    background: var(--primary-pink);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: var(--secondary-pink);
+    transform: translateY(-2px);
+}
+
+
+/* Responsive rules for header */
+@media (max-width: 768px) { 
+    .search-box input {
+        width: 200px;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+        justify-content: center;
+        padding: 100px !important;
+    }
+}
+
+ @media (min-width: 991px){
+     .nav-link i {
+        display: none;
+     }
+
+ }
+ @media (max-width: 991px) { 
+       .navbar-collapse {
+        background-color: white;
+        padding: 20px;
+        margin-top: 15px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        text-align: left !important;
+    }
+     .navbar-nav {
+        padding: 0 !important;
+        margin: 0 !important;
+        text-align: left !important;
+        justify-content: flex-start !important;
+    }
+     .nav-item {
+        margin-bottom: 10px;
+    }
+     .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 0 !important;
+    }
+        .nav-link i {
+        width: 20px;
+        text-align: center;
+    }
+      .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 15px 0;
+    }
+     
+    
+    .search-box input {
+        width: 100% !important;
+    }
+    
+    #authButtons {
+        margin-left: 0 !important;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+/*==================================== end header ===========================*/
+
+

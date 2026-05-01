@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Holy Donuts</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+  <!-- شريط التنقل العلوي (navbar) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">
+        <i class="fas fa-tachometer-alt me-2"></i>
+        Holy Donuts Admin
+      </a>
+      <!-- زر تسجيل الخروج -->
+      <div class="ms-auto">
+        <button class="btn btn-outline-primary" id="logoutBtn">
+          <i class="fas fa-sign-out-alt me-2"></i>
+          Logout
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid mt-4">
+    <!-- إحصائيات سريعة -->
+    <div class="row mb-4">
+      <div class="col-md-6">
+        <div class="card bg-primary text-white">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h5 class="card-title">Total Users</h5>
+                <h2 id="totalUsers">0</h2>
+              </div>
+              <div class="align-self-center">
+                <i class="fas fa-users fa-2x"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card bg-success text-white">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h5 class="card-title">Total Products</h5>
+                <h2 id="totalProducts">0</h2>
+              </div>
+              <div class="align-self-center">
+                <i class="fas fa-box fa-2x"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم إدارة المستخدمين -->
+    <div class="card mb-5">
+      <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">
+          <i class="fas fa-users me-2"></i>
+          Manage Users
+        </h4>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover" id="usersTable">
+            <thead class="table-dark">
+              <tr>
+                <th>#</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Role</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody><!-- هنا بتضاف الصفوف من الجافاسكريبت --></tbody>
+          </table>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#userModal">
+            <i class="fas fa-plus me-2"></i>
+            Add User
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- قسم إدارة المنتجات -->
+    <div class="card mb-4">
+      <div class="card-header bg-dark text-white">
+        <h4 class="mb-0">
+          <i class="fas fa-box me-2"></i>
+          Manage Products
+        </h4>
+      </div>
+      <div class="card-body">
+        <!-- فلاتر البحث والفئات وزر المسح -->
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <div class="input-group">
+              <span class="input-group-text">
+                <i class="fas fa-search"></i>
+              </span>
+              <input type="text" class="form-control" id="searchProducts" placeholder="Search products...">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <select class="form-select" id="categoryFilter">
+              <option value="">All Categories</option>
+              <option value="donuts">Donuts</option>
+              <option value="Coffee">Coffee</option>
+              <option value="Ice Blended">Ice Blended</option>
+              <option value="Sandwiches">Sandwiches</option>
+            </select>
+          </div>
+          <div class="col-md-2">
+            <div class="d-flex flex-column gap-3">
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal">
+                <i class="fas fa-plus me-2"></i>
+                Add Product
+              </button>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-hover" id="productsTable">
+            <thead class="table-dark">
+              <tr>
+                <th>ID</th>
+                <th>Product Details</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody><!-- هنا بتضاف المنتجات من الجافاسكريبت --></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="userModal" tabindex="-1" aria-labelledby="userModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="userModalLabel">Add/Edit User</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="userForm">
+            <input type="hidden" id="userIndex">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="text" class="form-control" id="phone" required>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" required>
+            </div>
+            <div class="mb-3">
+              <label for="role" class="form-label">Role</label>
+              <select class="form-select" id="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="productModalLabel">Add/Edit Product</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="productForm">
+            <input type="hidden" id="productIndex">
+            <div class="mb-3">
+              <label for="productName" class="form-label">Product Name</label>
+              <input type="text" class="form-control" id="productName" required>
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="number" class="form-control" id="price" required>
+            </div>
+            <div class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select class="form-select" id="category" required>
+                <option value="donuts">Donuts</option>
+                <option value="Coffee">Coffee</option>
+                <option value="Ice Blended">Ice Blended</option>
+                <option value="Sandwiches">Sandwiches</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label">Product Image (URL)</label>
+              <input type="text" class="form-control" id="image" placeholder="Paste image URL or upload below">
+            </div>
+            <div class="mb-3">
+              <label for="imageUpload" class="form-label">Or Upload Image</label>
+              <input type="file" class="form-control" id="imageUpload" accept="image/*">
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control" id="description" rows="2" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-pink-gradient w-100">Save Product</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ملفات الجافاسكريبت -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="../js/admin.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up to Holy Donuts</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+
+<body>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="glass-card">
+            <form id="registerForm" novalidate>
+                <h2 class="text-center mb-4">Sign up to Holy Donuts</h2>
+
+                <!--user name-->
+                <div class="form-floating mb-2">
+                    <input type="text" class="form-control" id="username" placeholder="User name" required>
+                    <label for="username">Enter your user name</label>
+                    <div class="input-error" id="usernameError"></div>
+                </div>
+
+                <!-- email-->
+                <div class="form-floating mb-2">
+                    <input type="email" class="form-control" id="email" placeholder="Email address" required>
+                    <label for="email">Enter your email address</label>
+                    <div class="input-error" id="emailError"></div>
+                </div>
+
+                <!--phone number-->
+                <div class="form-floating mb-2">
+                    <input type="tel" class="form-control" id="phone" placeholder="Phone number" required>
+                    <label for="phone">Enter your phone number</label>
+                    <div class="input-error" id="phoneError"></div>
+                </div>
+
+                <!-- password -->
+                <div class="form-floating mb-2">
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                    <label for="password">Enter your password</label>
+                    <div class="input-error" id="passwordError"></div>
+                </div>
+
+                <!-- password confirm-->
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password"
+                        required>
+                    <label for="confirmPassword">Confirm your password</label>
+                    <div class="input-error" id="confirmPasswordError"></div>
+                </div>
+
+                <!-- success message-->
+                <div id="successMessage" class="success-message mb-3"></div>
+
+                <!-- create button -->
+                <div class="d-grid mb-3">
+                    <button type="submit" class="btn btn-light fw-bold">Create your account</button>
+                </div>
+
+                <!-- go to login page -->
+                <div class="text-center">
+                    <p>Already a member? <a href="./login.html">Sign in</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/register.js"></script>
+    <script src="../js/navbar.js"></script>
+</body>
+
+
+</html>
