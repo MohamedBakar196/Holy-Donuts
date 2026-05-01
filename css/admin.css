@@ -1,0 +1,700 @@
+/* =================== CSS Variables - Matching Site Theme =================== */
+:root {
+    --primary-pink: #ff69b4;
+    --secondary-pink: #ff91c7;
+    --light-pink: #ffe4f0;
+    --dark-gray: #333;
+    --light-gray: #f8f9fa;
+    --white: #ffffff;
+    --shadow-light: 0 2px 10px rgba(255, 105, 180, 0.1);
+    --shadow-medium: 0 4px 20px rgba(255, 105, 180, 0.15);
+    --shadow-heavy: 0 8px 30px rgba(255, 105, 180, 0.2);
+    --border-radius: 15px;
+    --border-radius-small: 8px;
+    --transition: all 0.3s ease;
+}
+
+/* =================== Body & General Styling =================== */
+body {
+    font-family: 'Teko', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+    background: linear-gradient(135deg, var(--light-pink) 0%, var(--white) 50%, #f8f9fa 100%);
+    min-height: 100vh;
+}
+
+/* =================== Modern Button Styles =================== */
+.btn-primary,
+.btn-success,
+.btn-outline-light {
+    background: var(--primary-pink);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 600;
+    color: var(--white) !important;
+    transition: var(--transition);
+    box-shadow: var(--shadow-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover,
+.btn-success:hover,
+.btn-outline-light:hover {
+    background: var(--secondary-pink);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+    color: var(--white) !important;
+}
+
+.btn-warning {
+    background: linear-gradient(45deg, #ffc107, #ffeb3b);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: 600;
+    color: var(--dark-gray) !important;
+    transition: var(--transition);
+    box-shadow: var(--shadow-light);
+}
+
+.btn-warning:hover {
+    background: linear-gradient(45deg, #e0a800, #f57f17);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+    color: var(--dark-gray) !important;
+}
+
+.btn-danger {
+    background: linear-gradient(45deg, #dc3545, #e74c3c);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: 600;
+    color: var(--white) !important;
+    transition: var(--transition);
+    box-shadow: var(--shadow-light);
+}
+
+.btn-danger:hover {
+    background: linear-gradient(45deg, #c82333, #c0392b);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+    color: var(--white) !important;
+}
+
+/* =================== Modern Navbar =================== */
+.navbar {
+    background: var(--white) !important;
+    padding: 1rem 0;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow-medium);
+    border-bottom: 3px solid var(--primary-pink);
+}
+
+.navbar-brand {
+    font-weight: 900 !important;
+    font-size: 1.8rem;
+    color: var(--primary-pink) !important;
+    font-family: 'Teko', sans-serif;
+    letter-spacing: 1px;
+}
+
+.navbar-brand:hover {
+    color: var(--secondary-pink) !important;
+    transform: scale(1.05);
+    transition: var(--transition);
+}
+
+/* =================== Typography =================== */
+h2, h4 {
+    margin-top: 30px;
+    color: var(--dark-gray);
+    font-weight: 300;
+    font-family: 'Teko', sans-serif;
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+}
+
+h4 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 35px;
+    font-weight: 100;
+    margin-bottom: 50px;
+    color: var(--dark-gray);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--primary-pink);
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+/* =================== Modern Card Styles =================== */
+.card {
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    overflow: hidden;
+    background: var(--white);
+    margin-bottom: 30px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.card-header {
+    background: var(--dark-gray) !important;
+    border-bottom: none;
+    padding: 1.5rem;
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+    position: relative;
+}
+
+.card-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary-pink);
+}
+
+.card-header h4 {
+    margin: 0;
+    color: var(--white) !important;
+    font-family: 'Teko', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* Statistics Cards */
+.card.bg-primary {
+    background: linear-gradient(135deg, var(--primary-pink) 0%, var(--secondary-pink) 100%) !important;
+    border: none;
+    color: var(--white);
+}
+
+.card.bg-success {
+    background: linear-gradient(135deg, #e035de 0%, #a20dac 100%) !important;
+    border: none;
+    color: var(--white);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Statistics Card Icons */
+.card .fa-2x {
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.card:hover .fa-2x {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* =================== Modern Table Styles =================== */
+.table-responsive {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    background: var(--white);
+}
+
+.table {
+    margin-bottom: 0;
+    background: var(--white);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead th {
+    background: var(--dark-gray) !important;
+    color: var(--white) !important;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    padding: 1.2rem 1rem;
+    font-family: 'Teko', sans-serif;
+    position: relative;
+}
+
+.table thead th::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--primary-pink);
+}
+
+.table tbody tr {
+    transition: var(--transition);
+    border-bottom: 1px solid rgba(255, 105, 180, 0.1);
+}
+
+.table tbody tr:hover {
+    background: linear-gradient(90deg, rgba(255, 105, 180, 0.05) 0%, rgba(255, 145, 199, 0.05) 100%);
+    transform: scale(1.01);
+}
+
+.table tbody td {
+    padding: 1.2rem 1rem;
+    border: none;
+    vertical-align: middle;
+    font-weight: 500;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* =================== Enhanced Button Groups =================== */
+.btn-group .btn {
+    margin: 0 3px;
+    border-radius: 20px !important;
+    font-weight: 500;
+}
+
+.btn-sm {
+    padding: 0.6rem 1rem;
+    font-size: 0.875rem;
+    border-radius: 18px;
+}
+
+/* =================== Modern Search and Filter Styles =================== */
+.input-group-text {
+    background: var(--primary-pink);
+    border: none;
+    color: var(--white);
+    border-radius: 25px 0 0 25px;
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid rgba(255, 105, 180, 0.2);
+    border-radius: 25px;
+    padding: 12px 20px;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 0.3rem rgba(255, 105, 180, 0.15);
+    background: rgba(255, 105, 180, 0.02);
+}
+
+.input-group .form-control {
+    border-radius: 0 25px 25px 0;
+}
+
+/* =================== Modern Badge Styles =================== */
+.badge {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.badge.bg-primary {
+    background: var(--primary-pink) !important;
+}
+
+.badge.bg-success {
+    background: linear-gradient(45deg, #28a745, #20c997) !important;
+}
+
+.badge.bg-warning {
+    background: linear-gradient(45deg, #ffc107, #ffeb3b) !important;
+    color: var(--dark-gray) !important;
+}
+
+/* =================== Modern Modal Enhancements =================== */
+.modal-content {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-heavy);
+    border: none;
+    overflow: hidden;
+}
+
+.modal-header {
+    background: var(--dark-gray);
+    color: var(--white);
+    border-bottom: none;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    position: relative;
+    padding: 1.5rem 2rem;
+}
+
+.modal-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--primary-pink);
+}
+
+.modal-title {
+    color: var(--white) !important;
+    font-weight: 300;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.modal-body {
+    padding: 2rem;
+    background: var(--white);
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.btn-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.form-label {
+    color: var(--dark-gray);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.btn-pink-gradient {
+    background: var(--primary-pink);
+    color: var(--white);
+    border: none;
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 12px 30px;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-pink-gradient:hover {
+    background: var(--secondary-pink);
+    color: var(--white) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+/* =================== Product Image Styles =================== */
+.table img {
+    border-radius: var(--border-radius-small);
+    transition: var(--transition);
+    box-shadow: var(--shadow-light);
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+}
+
+.table img:hover {
+    transform: scale(1.15);
+    box-shadow: var(--shadow-medium);
+}
+
+/* =================== Action Buttons in Tables =================== */
+.table .btn {
+    margin: 0 2px;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+}
+
+/* =================== Statistics Cards Content =================== */
+.card h2 {
+    font-size: 3rem;
+    font-weight: 300;
+    margin: 0;
+    font-family: 'Teko', sans-serif;
+}
+
+.card h5 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* =================== Loading States =================== */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid var(--primary-pink);
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =================== Responsive Design =================== */
+@media (max-width: 1200px) {
+    .container-fluid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .table-responsive {
+        overflow-x: auto;
+        border-radius: var(--border-radius-small);
+    }
+
+    .table {
+        font-size: 0.9rem;
+        min-width: 700px;
+    }
+
+    .modal-content {
+        margin: 10px;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .container,
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    h2, h4 {
+        font-size: 1.8rem;
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-control,
+    .form-select,
+    textarea {
+        font-size: 1rem;
+        padding: 10px 15px;
+        border-radius: 20px;
+    }
+
+    .btn,
+    .btn-pink-gradient {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    h2, h4 {
+        font-size: 1.5rem;
+    }
+
+    .btn-group .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        margin: 0 1px;
+    }
+
+    .table img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .table thead th {
+        padding: 1rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .table tbody td {
+        padding: 1rem 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn-group .btn {
+        margin: 0;
+        width: 100%;
+    }
+
+    .table img {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    h2, h4 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}
+
+/* =================== Custom Scrollbar =================== */
+.table-responsive::-webkit-scrollbar {
+    height: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 10px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background: var(--primary-pink);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-pink);
+}
+
+/* =================== Additional Modern Touches =================== */
+.container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Logout Button Styling */
+#logoutBtn {
+    background: transparent;
+    border: 2px solid var(--white);
+    color: var(--white);
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+#logoutBtn:hover {
+    background: var(--white);
+    color: var(--primary-pink);
+    transform: translateY(-2px);
+}
+
+/* Enhanced Focus States */
+*:focus {
+    outline: none;
+}
+
+.btn:focus,
+.form-control:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
+}
+
+/* Smooth Animations */
+* {
+    transition: var(--transition);
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .btn,
+    .modal {
+        display: none !important;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    
+    body {
+        background: white;
+    }
+}

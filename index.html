@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holy Donuts - Sprinkles Happiness</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link href="./css/home.css" rel="stylesheet" />
+  <link href="./css/sectwo.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand bar-text" href="./index.html">
+        <!-- <div class="donut-logo"></div> -->
+        <a href="./index.html">
+          <img class="nav__logo" src="./images/donut-logo.png" alt="" />
+        </a>
+        <!-- Holy Donuts -->
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+
+            <a class="nav-link" href="./index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/menu.html"><i class="fa-solid fa-face-smile"></i><span>Menu</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/about.html"><i class="fa-solid fa-user"></i><span>About</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pages/contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span>
+            </a>
+          </li>
+        </ul>
+
+
+
+        <div class="cart-icon me-3" onclick="window.location.href='./pages/cart.html'">
+          <!-- <i class="fas fa-shopping-cart"></i> -->
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+
+        <div class="profile-icon me-3" onclick="window.location.href='./pages/profile.html'" title="Profile">
+          <i class="fa-solid fa-user-circle"></i>
+        </div>
+
+        <div id="authButtons">
+          <button class="btn  me-2 btnone display-6 " onclick="window.location.href='./pages/login.html'">
+            Login
+          </button>
+          <button class="btn btn-primary btntwo" onclick="window.location.href='./pages/register.html'">
+            Sign Up
+          </button>
+        </div>
+
+        <div id="userMenu" class="hidden">
+          <span class="me-3">Welcome, <span id="userName"></span></span>
+          <button class="btn btn-outline-danger" onclick="logout()">
+            Logout
+          </button>
+        </div>
+
+        <div id="adminButtonContainer" style="display: none;">
+          <button class="btn btn-warning me-2" onclick="goToAdminPanel()">
+            <i class="fa-solid fa-gear"></i> Admin Panel
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </nav>
+  <!-- ========================= end header ======================== -->
+
+  <!--  ===================== start section one ============================== -->
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="hero-title"> <span class="hero-span">Donut not donut</span>
+            <br />
+            Have you ever tried
+            <br /><span style="color: var(--primary-pink)">Donuts?</span>
+          </h1>
+          <p class="hero-subtitle">
+            Doughnuts are a kind of ring-shaped snack food popular in many
+            countries, which are usually deep fried from flour dough.
+          </p>
+          <button class="btn btn-primary btn-lg" onclick="window.location.href='./pages/menu.html'">
+            Explore menu ➜
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== end section 1 ====================== -->
+
+  <!--  ===================== start section2 =============== -->
+  <!-- Why Choose Us Section -->
+  <section class="content__section">
+    <div class="content__banner">
+      <div class="content__info">
+        <h2>Why Choose Holy Donuts Store?</h2>
+        <ul class="service">
+          <li class="service__item">
+            <img class="service__img" src="./images/shipped.png" alt="">
+            <div class="service__info">
+              <h5>Delivery</h5>
+              <p>If you're a last-minute gifter, we've got you covered with next-day delivery.</p>
+            </div>
+          </li>
+          <li class="service__item">
+            <img class="service__img" src="./images/box.png" alt="">
+            <div class="service__info">
+              <h5>Carefully Packaged</h5>
+              <p>We make your doughnuts fresh every day and package them in our Doughnut Time postal boxes.</p>
+            </div>
+          </li>
+          <li class="service__item">
+            <img class="service__img" src="./images/baking.png" alt="">
+            <div class="service__info">
+              <h5>Made By Hand</h5>
+              <p>Try our one-of-a-kind doughnuts, hand made with the freshest and finest ingredients.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <img class="content__img" src="./images/pn9.gif" />
+    </div>
+  </section>
+  <!-- end section222222 -->
+
+  <!-- start section333 -->
+  <!-- Categories Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Category</h2>
+      <div class="row">
+
+        <!-- card 1 -->
+        <div class="col-md-3 col-sm-6 ">
+          <div class="category-card car1" onclick="window.location.href='./pages/menu.html?category=donuts'">
+            <h4>Donuts</h4>
+          </div>
+        </div>
+
+        <!-- card2 -->
+        <div class="col-md-3 col-sm-6 ">
+          <div class="category-card car2" onclick="window.location.href='./pages/menu.html?category=muffins'">
+
+            <h4>Sandwiches</h4>
+          </div>
+        </div>
+
+        <!-- card 3 -->
+        <div class="col-md-3 col-sm-6 ">
+          <div class="category-card car3" onclick="window.location.href='./pages/menu.html?category=croissants'">
+
+            <h4>Coffee</h4>
+          </div>
+        </div>
+
+        <!-- card4 -->
+        <div class="col-md-3 col-sm-6">
+          <div class="category-card car4" onclick="window.location.href='./pages/menu.html?category=beverages'">
+
+            <h4>Ice Blended</h4>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section 3333333333333 -->
+
+
+
+  <!-- Footer -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 foo">
+          <div class="log-titi">
+            <a href="./index.html">
+              <img width="80px" height="80px" src="./images/donut-logo.png" alt="">
+            </a>
+            <h5>Holy Donuts</h5>
+          </div>
+          <p>
+            Holy Donuts store sprinkles happiness
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./pages/menu.html">Menu</a></li>
+            <li><a href="./pages/about.html">About</a></li>
+            <li><a href="./pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Categories</h5>
+          <ul class="list-unstyled">
+            <li><a href="./pages/menu.html?category=donuts">Donuts</a></li>
+            <li><a href="./pages/menu.html?category=muffins">Sandwiches</a></li>
+            <li>
+              <a href="./pages/menu.html?category=croissants">Coffee</a>
+            </li>
+            <li>
+              <a href="./pages/menu.html?category=beverages">Ice Blended</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled">
+            <li>
+              <i class="fas fa-map-marker-alt me-2"></i>123 Sweet Street,
+              Donut City
+            </li>
+            <li><i class="fas fa-phone me-2"></i>(555) 123-DONUT</li>
+            <li><i class="fas fa-envelope me-2"></i>info@holydonuts.com</li>
+            <li><i class="fas fa-clock me-2"></i>Mon-Sun: 6AM - 10PM</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4" />
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>&copy; 2025 Holy Donuts. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/navbar.js"></script>
+  <script src="./js/home.js"></script>
+</body>
+
+</html>

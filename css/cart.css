@@ -1,0 +1,128 @@
+/* cart.css - تحسين شكل صفحة الكارت */
+
+.cart-table {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.cart-item {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+    padding: 18px 10px;
+    margin-bottom: 8px;
+    transition: box-shadow 0.2s;
+}
+
+.cart-item:hover {
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ffb6c1;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-btn {
+    background: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.quantity-btn:hover {
+    background: #e75480;
+}
+
+.cart-item h5 {
+    font-size: 1.1rem;
+    color: #d2691e;
+    margin-bottom: 4px;
+}
+
+.cart-item p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0;
+}
+
+.cart-item strong {
+    color: #e67e22;
+    font-size: 1.1rem;
+}
+
+.btn-danger.btn-sm {
+    padding: 4px 10px;
+    font-size: 0.95rem;
+}
+
+/* Order summary & sidebar */
+.category-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+    padding: 18px 16px;
+    margin-bottom: 18px;
+}
+
+/* ===================== Responsive Design ===================== */
+/* هذه القواعد تجعل صفحة الكارت متجاوبة مع جميع الشاشات (موبايل/تابلت/ديسكتوب) */
+
+@media (max-width: 991px) {
+
+    /* تصغير صفوف الكارت والكروت في الشاشات الصغيرة */
+    .cart-table {
+        gap: 10px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        padding: 12px 6px;
+        min-width: 180px;
+        max-width: 350px;
+    }
+
+    .category-card {
+        padding: 10px 6px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* تصغير عناصر البطاقة والأزرار في الموبايل */
+    .cart-item {
+        padding: 8px 2px;
+        min-height: 120px;
+    }
+
+    .cart-item h5 {
+        font-size: 1rem;
+    }
+
+    .cart-item p {
+        font-size: 0.9rem;
+    }
+
+    .quantity-btn {
+        font-size: 1rem;
+        padding: 6px 8px;
+    }
+}
+
+/* نهاية responsive */

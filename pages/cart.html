@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Holy Donuts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/header.css" rel="stylesheet">
+    <link href="../css/cart.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand bar-text">
+                <a href="../index.html">
+                    <img class="nav__logo" src="../images/donut-logo.png" alt="" />
+                </a>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./menu.html"><i class="fa-solid fa-face-smile"></i><span>Menu</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html"><i class="fa-solid fa-user"></i><span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html"><i
+                                class="fa-solid fa-envelope"></i><span>Contact</span> </a>
+                    </li>
+                </ul>
+
+                <div class="cart-icon me-3" onclick="window.location.href='./cart.html'">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+
+                <div id="authButtons">
+                    <button class="btn  me-2 btnone display-6 " onclick="window.location.href='./login.html'">
+                        Login
+                    </button>
+                    <button class="btn btn-primary btntwo" onclick="window.location.href='./register.html'">
+                        Sign Up
+                    </button>
+                </div>
+                <div id="userMenu" class="hidden">
+                    <span class="me-3">Welcome, <span id="userName"></span></span>
+                    <button class="btn btn-outline-danger" onclick="logout()">
+                        Logout
+                    </button>
+                </div>
+
+                <div id="adminButtonContainer" style="display: none;">
+                    <button class="btn btn-warning me-2" onclick="goToAdminPanel()">
+                        <i class="fa-solid fa-gear"></i> Admin Panel
+                    </button>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Cart Header -->
+    <section class="py-5" style="margin-top: 80px;">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h1 class="section-title">Shopping Cart</h1>
+                <p class="lead">Review your items and proceed to checkout</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div id="cartContainer">
+                        <!-- Cart items will be loaded here by JavaScript -->
+                        <div class="text-center">
+                            <div class="category-icon mx-auto mb-4">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3>Your cart is empty</h3>
+                            <p class="mb-4">Add some delicious items to get started!</p>
+                            <button class="btn btn-primary btn-lg" onclick="window.location.href='menu.html'">Browse
+                                Menu</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="category-card">
+                        <h4>Order Summary</h4>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Tax (8.5%):</span>
+                            <span id="tax">$0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Delivery:</span>
+                            <span id="delivery">Free</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-4">
+                            <strong>Total:</strong>
+                            <strong id="total">$0.00</strong>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="promoCode" class="form-label">Promo Code</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="promoCode" placeholder="Enter code">
+                                <button class="btn btn-outline-primary" onclick="applyPromoCode()">Apply</button>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-lg w-100 mb-3" onclick="proceedToCheckout()">
+                            <i class="fas fa-credit-card me-2"></i>Checkout
+                        </button>
+
+                        <button class="btn btn-outline-primary w-100" onclick="window.location.href='menu.html'">
+                            <i class="fas fa-arrow-left me-2"></i>Continue Shopping
+                        </button>
+                    </div>
+
+                    <!-- Delivery Information -->
+                    <div class="category-card mt-4">
+                        <h5><i class="fas fa-truck me-2" style="color: var(--primary-pink);"></i>Delivery Info</h5>
+                        <p class="small mb-2"><strong>Free Delivery:</strong> Orders over $25</p>
+                        <p class="small mb-2"><strong>Delivery Time:</strong> 30-45 minutes</p>
+                        <p class="small mb-0"><strong>Delivery Area:</strong> 5-mile radius</p>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="category-card mt-4">
+                        <h5><i class="fas fa-phone me-2" style="color: var(--primary-pink);"></i>Need Help?</h5>
+                        <p class="small mb-2">Call us: (555) 123-DONUT</p>
+                        <p class="small mb-0">Email: orders@holydonuts.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Holy Donuts</h5>
+                    <p>Bringing you the finest donuts and pastries since 2020. Made with love and the highest quality
+                        ingredients.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="menu.html?category=donuts">Donuts</a></li>
+                        <li><a href="menu.html?category=muffins">Muffins</a></li>
+                        <li><a href="menu.html?category=croissants">Croissants</a></li>
+                        <li><a href="menu.html?category=beverages">Beverages</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i>123 Sweet Street, Donut City</li>
+                        <li><i class="fas fa-phone me-2"></i>(555) 123-DONUT</li>
+                        <li><i class="fas fa-envelope me-2"></i>info@holydonuts.com</li>
+                        <li><i class="fas fa-clock me-2"></i>Mon-Sun: 6AM - 10PM</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2024 Holy Donuts. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/navbar.js"></script>
+    <script src="../js/cart.js"></script>
+
+    <script>
+        // Function to handle checkout process
+        function proceedToCheckout() {
+            // Check if user is logged in
+            const user = JSON.parse(localStorage.getItem('loggedInUser'));
+
+            if (user) {
+                // User is logged in, proceed to checkout
+                window.location.href = 'checkout.html';
+            } else {
+                // User is not logged in, redirect to login page
+                // Store current page to redirect back after login
+                localStorage.setItem('redirectAfterLogin', 'checkout.html');
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+</body>
+
+
+</html>

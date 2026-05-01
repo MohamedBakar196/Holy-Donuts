@@ -1,0 +1,140 @@
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.content {
+    margin-top: 80px;
+}
+
+.content__section {
+    
+    background-color: rgba(235, 233, 231, 0.312);
+}
+
+.content__title {
+    position: relative;
+    font-size: 38px;
+    font-family: var(--heading-font);
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.content__title::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: var(--primary-color);
+}
+
+.content__product  .card__product {
+    margin-top: calc(var(--card-product-img-height ) / 2 + 20px);
+
+}
+
+.content__banner {
+    width: 100%;
+    display: flex;
+    background-color: var(--secondary-color);
+    min-height: 550px;
+    flex-wrap: wrap-reverse;
+}
+
+.content__info {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+
+}
+
+.content__info > h2 {
+    text-align: center;
+    font-size: 30px;
+    font-family: var(--heading-font);
+    font-weight: 800;
+}
+
+.content__img {
+    width: 60%;
+    object-fit:cover;
+    height: auto;
+    filter: brightness(0.9);
+    
+}
+
+.service {
+    padding-left: 0;
+}
+
+.service__item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 30px 0;
+    border-radius: 8px;
+}
+
+.service__img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.service__info {
+    margin-left: 20px;
+}
+
+
+.service__info > p {
+    color: #817f7f;
+    font-weight: 300;
+}
+.service__info > h5 {
+    font-weight: 500;
+}
+
+
+
+/* Mobile -> Tablet */
+@media (max-width: 991px) {
+
+    .content__section {
+        margin-bottom: 50px;
+    }
+
+    .content__img,
+    .content__info {
+        width: 100%;
+    }
+    
+    .content__product  .card__product {
+        margin-top: calc(var(--card-product-img-height ) / 2);
+    
+    }
+
+    .service__item {
+        margin: 10px 0;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+    .content__product > .row.category-scroll-x {
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    .content__product > .category-scroll-x > div.col-12 {
+        width: 85%;
+        scroll-snap-align: start;
+    }
+
+}

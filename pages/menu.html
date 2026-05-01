@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Holy Donuts</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="../css/header.css" rel="stylesheet">
+  <link href="../css/footer.css" rel="stylesheet">
+  <link href="../css/menu.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand bar-text">
+        <a href="../index.html">
+          <img class="nav__logo" src="../images/donut-logo.png" alt="" />
+        </a>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+
+            <a class="nav-link" href="../index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./menu.html"><i class="fa-solid fa-face-smile"></i><span>Menu</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./about.html"><i class="fa-solid fa-user"></i><span>About</span> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contact.html"><i class="fa-solid fa-envelope"></i><span>Contact</span> </a>
+          </li>
+        </ul>
+
+        <div class="cart-icon me-3" onclick="window.location.href='./cart.html'">
+          <!-- <i class="fas fa-shopping-cart"></i> -->
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </div>
+
+        <div id="authButtons">
+          <button class="btn  me-2 btnone display-6" onclick="window.location.href='./login.html'">
+            Login
+          </button>
+          <button class="btn btn- btntwo" onclick="window.location.href='./register.html'">
+            Sign Up
+          </button>
+        </div>
+
+        <div id="userMenu" class="hidden">
+          <span class="me-3">Welcome, <span id="userName"></span></span>
+          <button class="btn btn-outline-danger" onclick="logout()">
+            Logout
+          </button>
+        </div>
+
+        <div id="adminButtonContainer" style="display: none;">
+          <button class="btn btn-warning me-2" onclick="goToAdminPanel()">
+            <i class="fa-solid fa-gear"></i> Admin Panel
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+  </nav>
+  <!-- =========== end header =========== -->
+
+  <!-- Menu Header -->
+  <div class="container sec">
+    <div class="title">Our menu</div>
+    <ul class="menu__tab" style="display: flex; gap: 20px; justify-content: start; margin-bottom: 30px;">
+      <li class="menu__tab-item" style="cursor:pointer;" title="Donuts" onclick="filterMenu('donuts')">
+        <img src="../assets/img/tabs/tab-donut.png" alt="Donuts" class="menu__tab-img" width="60" height="60">
+        <h3 class="menu__tab-name">Donuts</h3>
+      </li>
+      <li class="menu__tab-item" style="cursor:pointer;" title="Sandwiches" onclick="filterMenu('Sandwiches')">
+        <img src="../assets/img/tabs/tab-sandwich.png" alt="Sandwiches" class="menu__tab-img" width="60" height="60">
+        <h3 class="menu__tab-name">Sandwiches</h3>
+      </li>
+      <li class="menu__tab-item" style="cursor:pointer;" title="Coffee" onclick="filterMenu('Coffee')">
+        <img src="../assets/img/tabs/tab-cup-coffee.png" alt="Coffee" class="menu__tab-img" width="60" height="60">
+        <h3 class="menu__tab-name">Coffee</h3>
+      </li>
+      <li class="menu__tab-item" style="cursor:pointer;" title="Ice Blended" onclick="filterMenu('Ice Blended')">
+        <img src="../assets/img/tabs/tab-smoothie.png" alt="Ice Blended" class="menu__tab-img" width="60" height="60">
+        <h3 class="menu__tab-name">Ice Blended</h3>
+      </li>
+    </ul>
+    <div class="listProduct seclis">
+
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 foo">
+          <div class="log-titi">
+            <a href="../index.html">
+              <img width="80px" height="80px" src="../images/donut-logo.png" alt="">
+            </a>
+            <h5>Holy Donuts</h5>
+          </div>
+          <p>
+            Holy Donuts store sprinkles happiness
+          </p>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./menu.html">Menu</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Categories</h5>
+          <ul class="list-unstyled">
+            <li><a href="./menu.html?category=donuts">Donuts</a></li>
+            <li><a href="./menu.html?category=muffins">Sandwiches</a></li>
+            <li>
+              <a href="./menu.html?category=croissants">Coffee</a>
+            </li>
+            <li>
+              <a href="./menu.html?category=beverages">Ice Blended</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled">
+            <li>
+              <i class="fas fa-map-marker-alt me-2"></i>123 Sweet Street,
+              Donut City
+            </li>
+            <li><i class="fas fa-phone me-2"></i>(555) 123-DONUT</li>
+            <li><i class="fas fa-envelope me-2"></i>info@holydonuts.com</li>
+            <li><i class="fas fa-clock me-2"></i>Mon-Sun: 6AM - 10PM</li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4" />
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>&copy; 2025 Holy Donuts. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module">
+    import { showSuccess, showError } from '../js/notifications.js';
+    window.showSuccess = showSuccess;
+    window.showError = showError;
+  </script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/navbar.js"></script>
+  <script src="../js/menu.js"></script>
+</body>
+
+</html>
