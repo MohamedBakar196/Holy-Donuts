@@ -6,7 +6,6 @@ window.showError = showError;
 
 document.addEventListener("DOMContentLoaded", async () => {
 
-
   const usersTableBody = document.querySelector("#usersTable tbody");
   const productsTableBody = document.querySelector("#productsTable tbody");
 
@@ -17,33 +16,26 @@ document.addEventListener("DOMContentLoaded", async () => {
   const searchInput = document.getElementById("searchProducts");
   const categoryFilter = document.getElementById("categoryFilter");
 
-  // جلب البيانات من localStorage
   let users = JSON.parse(localStorage.getItem("users")) || [];
   let products = [];
   let filteredProducts = [];
 
-  // تحميل المنتجات من ملف products.json دائماً لضمان التحديث
   try {
     const response = await fetch('../js/products.json');
     const productsFromFile = await response.json();
 
-    // دمج المنتجات من الملف مع أي منتجات مضافة محلياً
     const localProducts = JSON.parse(localStorage.getItem("products")) || [];
 
-    // الحصول على المنتجات المضافة محلياً (التي لها id أكبر من أكبر id في الملف)
     const maxFileId = Math.max(...productsFromFile.map(p => p.id || 0));
     const localOnlyProducts = localProducts.filter(p => (p.id || 0) > maxFileId);
 
-    // دمج منتجات الملف مع المنتجات المحلية الجديدة
     products = [...productsFromFile, ...localOnlyProducts];
 
-    // تحديث localStorage بالبيانات المدموجة
     localStorage.setItem("products", JSON.stringify(products));
 
     console.log(`تم تحميل ${productsFromFile.length} منتج من الملف و ${localOnlyProducts.length} منتج محلي`);
   } catch (error) {
     console.error('Error loading products:', error);
-    // في حالة فشل تحميل الملف، استخدم البيانات المحلية
     products = JSON.parse(localStorage.getItem("products")) || [];
   }
   filteredProducts = [...products];
@@ -98,7 +90,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   function renderProducts() {
     productsTableBody.innerHTML = "";
     filteredProducts.forEach((product, index) => {
-      // العثور على الفهرس الأصلي في مصفوفة products
       const originalIndex = products.findIndex(p => p.id === product.id);
 
       const row = document.createElement("tr");
@@ -134,11 +125,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       productsTableBody.appendChild(row);
     });
 
-    // تحديث الإحصائيات
     updateStats();
   }
 
-  // إضافة أو تعديل مستخدم
   userForm.onsubmit = function (e) {
     e.preventDefault();
     const index = document.getElementById("userIndex").value;
@@ -166,13 +155,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     e.preventDefault();
     const index = document.getElementById("productIndex").value;
 
-    // التعامل مع رفع الصورة
     const imageUpload = document.getElementById("imageUpload");
     let imageUrl = document.getElementById("image").value;
 
     if (imageUpload.files && imageUpload.files[0]) {
-      // في حالة رفع صورة جديدة، يمكن هنا إضافة كود لرفع الصورة إلى الخادم
-      // لكن في هذا المثال سنستخدم URL مؤقت
       imageUrl = URL.createObjectURL(imageUpload.files[0]);
     }
 
@@ -193,7 +179,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     localStorage.setItem("products", JSON.stringify(products));
 
-    // تحديث المنتجات المفلترة
     filteredProducts = [...products];
     filterProducts();
 
@@ -201,12 +186,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     productForm.reset();
     document.getElementById("productIndex").value = "";
   };
-  // تسجيل الخروج
   logoutBtn.onclick = function () {
     window.location.href = "../index.html";
   };
 
-  // دوال التعديل والحذف (تكون متاحة للعالمية)
   window.editUser = function (index) {
     const user = users[index];
     document.getElementById("userIndex").value = index;
@@ -242,13 +225,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       products.splice(index, 1);
       localStorage.setItem("products", JSON.stringify(products));
 
-      // تحديث المنتجات المفلترة
       filteredProducts = [...products];
       filterProducts();
     }
   };
 
-  // عرض البيانات عند تحميل الصفحة
   renderUsers();
   renderProducts();
 });

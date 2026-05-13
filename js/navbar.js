@@ -16,7 +16,6 @@ function updateNavbarAuth() {
             if (userNameSpan) userNameSpan.textContent = user.username;
         }
 
-        // إظهار زر Admin Panel إذا كان المستخدم admin
         if (user.role === 'admin') {
             const adminButtonContainer = document.getElementById('adminButtonContainer');
             if (adminButtonContainer) {
